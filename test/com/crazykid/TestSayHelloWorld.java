@@ -1,5 +1,6 @@
 package com.crazykid;
 
+import com.crazykid.myexception.NotInTheListException;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
@@ -36,17 +37,23 @@ public class TestSayHelloWorld {
     }
 
     @Test
-    public void testSayHelloToSomeone() {
+    public void testSayHelloToBobAndAlice() {
         assertEquals("Hello, Bob", clark.hello(bob));
         assertEquals("Hello, Alice", clark.hello(alice));
-        assertEquals("Hello, Tom", clark.hello(tom));
+    }
+
+    @Test
+    public void testSayHelloToTom() {
+        expectedException.expect(NotInTheListException.class);
+        expectedException.expectMessage(tom + " is not in the list");
+        clark.hello(tom);
     }
 
     @Test
     public void testSayHelloToNull() {
         expectedException.expect(NullPointerException.class);
         expectedException.expectMessage("The name cannot be null");
-        clark.hello(null);
+        clark.hello(nullName);
     }
 
     @After
