@@ -15,15 +15,25 @@ public class TestSigma {
 
     @Test
     public void testSigmaPositive() {
-        int six = 6;
-        int sigmaSix = 14;
+        int six = 4;
+        int sigmaSixPlus = 10;
+        int sigmaSixMul = 24;
         int resultOfSigmaSix = sigma.apply(six);
-        assertEquals(sigmaSix, resultOfSigmaSix);
+        if (sigma.getFieldRandomNumber() > 0.4) {
+            assertEquals(sigmaSixMul, resultOfSigmaSix);
+        } else {
+            assertEquals(sigmaSixPlus, resultOfSigmaSix);
+        }
 
-        int ten = 10;
-        int sigmaTen = 33;
-        int resultOfSigmaTen = sigma.apply(ten);
-        assertEquals(sigmaTen, resultOfSigmaTen);
+        int five = 5;
+        int sigmaTenPlus = 15;
+        int sigmaTenMul = 120;
+        int resultOfSigmaTen = sigma.apply(five);
+        if (sigma.getFieldRandomNumber() > 0.4) {
+            assertEquals(sigmaTenMul, resultOfSigmaTen);
+        } else {
+            assertEquals(sigmaTenPlus, resultOfSigmaTen);
+        }
     }
 
     @Test

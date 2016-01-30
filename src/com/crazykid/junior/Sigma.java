@@ -4,7 +4,7 @@ package com.crazykid.junior;
 public class Sigma extends AbstractSigma {
 
     @Override
-    protected boolean needPlus(int factor) {
-        return factor % 3 == 0 || factor % 5 == 0;
+    protected boolean needCalculate(int factor) {
+        return true;
     }
 }
