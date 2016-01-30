@@ -7,36 +7,35 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 
 public class TestSigma {
-    private int six = 6;
-    private int sigmaSix = 21;
 
-    private int ten = 10;
-    private int sigmaTen = 55;
-
-    private int zero = 0;
-    private int negative = -10;
-    private Sigma sigma = new Sigma();
+    private AbstractSigma sigma = new Sigma();
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testSigmaPositive() {
+        int six = 6;
+        int sigmaSix = 14;
         int resultOfSigmaSix = sigma.apply(six);
         assertEquals(sigmaSix, resultOfSigmaSix);
 
+        int ten = 10;
+        int sigmaTen = 33;
         int resultOfSigmaTen = sigma.apply(ten);
         assertEquals(sigmaTen, resultOfSigmaTen);
     }
 
     @Test
     public void testSigmaZero() {
+        int zero = 0;
         expectIllegalArgumentException();
         sigma.apply(zero);
     }
 
     @Test
     public void testSigmaNegative() {
+        int negative = -10;
         expectIllegalArgumentException();
         sigma.apply(negative);
     }

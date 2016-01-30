@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by ljf on 16-1-29.
  */
-public class Clark {
+public class Clerk {
     private List<String> guestList;
     private String hello = "Hello";
 
-    public Clark() {
+    public Clerk() {
         guestList = new ArrayList<>();
         guestList.add("Bob");
         guestList.add("Alice");

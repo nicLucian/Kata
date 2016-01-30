@@ -1,6 +1,5 @@
 package com.crazykid.junior;
 
-import com.crazykid.junior.Clark;
 import com.crazykid.myexception.NotInTheListException;
 import org.junit.After;
 import org.junit.Before;
@@ -14,7 +13,7 @@ import static junit.framework.TestCase.assertEquals;
  * Created by ljf on 16-1-29.
  */
 public class TestSayHelloWorld {
-    private Clark clark = null;
+    private Clerk clerk = null;
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -27,37 +26,37 @@ public class TestSayHelloWorld {
 
     @Before
     public void setup() {
-        clark = new Clark();
+        clerk = new Clerk();
     }
 
     @Test
     public void testSayHelloWorld() {
-        String hello = clark.hello();
+        String hello = clerk.hello();
         assertEquals(originHello, hello);
     }
 
     @Test
     public void testSayHelloToBobAndAlice() {
-        assertEquals("Hello, Bob", clark.hello(bob));
-        assertEquals("Hello, Alice", clark.hello(alice));
+        assertEquals("Hello, Bob", clerk.hello(bob));
+        assertEquals("Hello, Alice", clerk.hello(alice));
     }
 
     @Test
     public void testSayHelloToTom() {
         expectedException.expect(NotInTheListException.class);
         expectedException.expectMessage(tom + " is not in the list");
-        clark.hello(tom);
+        clerk.hello(tom);
     }
 
     @Test
     public void testSayHelloToNull() {
         expectedException.expect(NullPointerException.class);
         expectedException.expectMessage("The name cannot be null");
-        clark.hello(nullName);
+        clerk.hello(nullName);
     }
 
     @After
     public void tearDown() {
-        clark = null;
+        clerk = null;
     }
 }
