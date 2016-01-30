@@ -1,7 +1,7 @@
-package com.crazykid;
+package com.crazykid.junior;
 
+import com.crazykid.junior.Clark;
 import com.crazykid.myexception.NotInTheListException;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

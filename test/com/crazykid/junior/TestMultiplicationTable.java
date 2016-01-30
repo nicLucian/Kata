@@ -1,5 +1,6 @@
-package com.crazykid;
+package com.crazykid.junior;
 
+import com.crazykid.junior.MultiplicationTable;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

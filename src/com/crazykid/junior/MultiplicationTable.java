@@ -1,4 +1,4 @@
-package com.crazykid;
+package com.crazykid.junior;
 
 public class MultiplicationTable {
     public String getTable(int factor) {

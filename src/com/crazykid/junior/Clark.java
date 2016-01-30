@@ -1,4 +1,4 @@
-package com.crazykid;
+package com.crazykid.junior;
 
 import com.crazykid.myexception.NotInTheListException;
 
