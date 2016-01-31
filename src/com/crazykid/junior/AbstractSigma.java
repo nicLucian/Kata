@@ -1,13 +1,12 @@
 package com.crazykid.junior;
 
-import java.util.Random;
-
 public abstract class AbstractSigma {
     private int mDefaultResult = 0;
     private double mRandomNum = 0;
+    private double mPossibility = 0.4;
 
     private PlusAgr mPlusAgr = new PlusAgr();
-    private MulitAgr mMulitAgr = new MulitAgr();
+    private MultiAgr mMultiAgr = new MultiAgr();
     private CalculateAgr mCalculateAgr = mPlusAgr;
 
 
@@ -25,15 +24,15 @@ public abstract class AbstractSigma {
     private int calculateResult(int factor) {
         prepare();
         for (int index = 1; index <= factor; index++) {
-            if(needCalculate(index))
+            if (needCalculate(index))
                 mDefaultResult = mCalculateAgr.calculate(mDefaultResult, index);
         }
         return mDefaultResult;
     }
 
     private void prepare() {
-        if(getRandomNumber() > 0.4) {
-            mCalculateAgr = mMulitAgr;
+        if (getRandomNumber() > getPossibility()) {
+            mCalculateAgr = mMultiAgr;
             mDefaultResult = 1;
         } else {
             mCalculateAgr = mPlusAgr;
@@ -46,7 +45,21 @@ public abstract class AbstractSigma {
         return mRandomNum;
     }
 
-    public double getFieldRandomNumber() {
+    public void setPossibility(double possibility) {
+        if (possibility < 0) {
+            mPossibility = 0;
+        }
+        if (possibility > 1) {
+            mPossibility = 1;
+        }
+        mPossibility = possibility;
+    }
+
+    public double getPossibility() {
+        return mPossibility;
+    }
+
+    public double getLastNumber() {
         return mRandomNum;
     }
 
@@ -63,12 +76,12 @@ public abstract class AbstractSigma {
         }
     }
 
-    class MulitAgr implements CalculateAgr {
+    class MultiAgr implements CalculateAgr {
         @Override
         public int calculate(int... factors) {
             int result = 1;
             for (int factor : factors) {
-                result  *= factor;
+                result *= factor;
             }
             return result;
         }

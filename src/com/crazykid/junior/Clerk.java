@@ -4,6 +4,7 @@ import com.crazykid.myexception.NotInTheListException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by ljf on 16-1-29.
@@ -32,4 +33,5 @@ public class Clerk {
         }
         return hello + ", " + name;
     }
+
 }

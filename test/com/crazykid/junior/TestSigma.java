@@ -19,7 +19,7 @@ public class TestSigma {
         int sigmaSixPlus = 10;
         int sigmaSixMul = 24;
         int resultOfSigmaSix = sigma.apply(six);
-        if (sigma.getFieldRandomNumber() > 0.4) {
+        if (sigma.getLastNumber() > 0.4) {
             assertEquals(sigmaSixMul, resultOfSigmaSix);
         } else {
             assertEquals(sigmaSixPlus, resultOfSigmaSix);
@@ -29,7 +29,8 @@ public class TestSigma {
         int sigmaTenPlus = 15;
         int sigmaTenMul = 120;
         int resultOfSigmaTen = sigma.apply(five);
-        if (sigma.getFieldRandomNumber() > 0.4) {
+        sigma.setPossibility(0.5);
+        if (sigma.getLastNumber() > sigma.getPossibility()) {
             assertEquals(sigmaTenMul, resultOfSigmaTen);
         } else {
             assertEquals(sigmaTenPlus, resultOfSigmaTen);
