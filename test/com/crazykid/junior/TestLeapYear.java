@@ -13,8 +13,6 @@ import static org.junit.Assert.assertTrue;
 
 public class TestLeapYear {
     private LeapYearGenerator mGenerator = new LeapYearGenerator();
-    private int negative = -1;
-    private int twenty = 20;
 
     @Rule
     public ExpectedException mExpectedException = ExpectedException.none();
