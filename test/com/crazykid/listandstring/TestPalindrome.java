@@ -7,9 +7,7 @@ import org.junit.rules.ExpectedException;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
-public class TestPalindrome {
-    @Rule
-    public ExpectedException mExpectedException = ExpectedException.none();
+public class TestPalindrome extends TestBase{
 
     @Test
     public void testIsNullPalindrome() {

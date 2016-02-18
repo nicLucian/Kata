@@ -12,11 +12,8 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class TestMaxNumInList {
+public class TestMaxNumInList extends TestBase{
     private MaxNumInList mMaxNumInList = new MaxNumInList();
-
-    @Rule
-    public ExpectedException mExpectedException = ExpectedException.none();
 
     @Test
     public void testMaxNumInNumbers() {

@@ -10,9 +10,7 @@ import java.util.Objects;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestReverseList {
-    @Rule
-    public ExpectedException mExpectedException = ExpectedException.none();
+public class TestReverseList extends TestBase{
     private Reverser mReverser;
 
     @Before

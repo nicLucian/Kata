@@ -10,9 +10,7 @@ import java.util.Arrays;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
-public class TestOddPositionCatcher {
-    @Rule
-    public ExpectedException mExpectedException = ExpectedException.none();
+public class TestOddPositionCatcher extends TestBase{
     private OddElementsCatcher catcher = new OddElementsCatcher();
 
     @Test
