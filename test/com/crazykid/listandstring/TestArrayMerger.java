@@ -9,9 +9,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class TestArrayMerger {
-    @Rule
-    public ExpectedException mExpectedException = ExpectedException.none();
+public class TestArrayMerger extends TestBase{
     private String mExpectMessage = "Both arrays cannot be null";
     private Class<? extends RuntimeException> exceptionClass =
             NullPointerException.class;
