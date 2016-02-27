@@ -25,7 +25,18 @@ public class SortUtil {
         return array;
     }
 
-    
+    public static int[] insertSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int j = i, element = array[i];
+            while (j > 0 && element < array[j-1]) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[j] = element;
+        }
+        return array;
+    }
+
 
     private static void handleNullArray(int[] array) {
         if (null == array) {
