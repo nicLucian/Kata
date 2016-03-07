@@ -72,4 +72,19 @@ public class TestSortUtil extends TestBase{
         assertTrue(Arrays.equals(actualArray3AfterSort, expectArray3AfterSort));
     }
 
+    @Test
+    public void testMergeSort() {
+        int[] actualArrayAfterSort = SortUtil.mergeSort(array);
+        assertTrue(Arrays.equals(actualArrayAfterSort, expectArrayAfterSort));
+
+        int[] actualArray1AfterSort = SortUtil.mergeSort(array1);
+        assertTrue(Arrays.equals(actualArray1AfterSort, expectArray1AfterSort));
+
+        int[] actualArray2AfterSort = SortUtil.mergeSort(array2);
+        assertTrue(Arrays.equals(actualArray2AfterSort, expectArray2AfterSort));
+
+        int[] actualArray3AfterSort = SortUtil.mergeSort(array3);
+        assertTrue(Arrays.equals(actualArray3AfterSort, expectArray3AfterSort));
+    }
+
 }
