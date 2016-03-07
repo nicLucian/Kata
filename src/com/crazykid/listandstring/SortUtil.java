@@ -37,6 +37,41 @@ public class SortUtil {
         return array;
     }
 
+    public static int[] mergeSort(int[] array) {
+        handleNullArray(array);
+        int[] src = array.clone();
+        mergeSort(src, array, 0, array.length);
+        return array;
+    }
+
+    private static void mergeSort(int[] src, int[] dest, int low, int high) {
+        if (high == low) {
+            return;
+        }
+        if (high - low == 1) {
+            if (dest[high-1] < dest[low]) {
+                int tmp = dest[high];
+                dest[high] = dest[low];
+                dest[low] = tmp;
+            }
+            return;
+        }
+
+        int destLow  = low;
+        int destHigh = high;
+        int mid = (low + high) >>> 1;
+        mergeSort(dest, src, low, mid);
+        mergeSort(dest, src, mid, high);
+
+        for (int i = destLow,p=low,q=mid;i<destHigh;i++) {
+            if (q >= high || p<mid && src[p] <= src[q]) {
+                dest[i] = src[p++];
+            } else {
+                dest[i] = src[q++];
+            }
+        }
+    }
+
 
     private static void handleNullArray(int[] array) {
         if (null == array) {
